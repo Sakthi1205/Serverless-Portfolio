@@ -57,12 +57,8 @@ Verified browser access using Minikube tunnel
 Easily portable and cloud-ready
 
 📂 Repository Structure
-.
-├── Dockerfile
-├── deployment.yaml
-├── service.yaml
-├── README.md
-└── portfolio-source/   # Your portfolio code
+<img width="240" height="188" alt="image" src="https://github.com/user-attachments/assets/29f12953-813d-464b-8b9e-9e2f87a16d54" />
+
 
 🔮 Future Enhancements
 
