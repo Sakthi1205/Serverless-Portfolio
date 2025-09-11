@@ -1,12 +1,74 @@
-# React + Vite
+🚀 Containerized Portfolio Deployment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project demonstrates how to containerize a personal portfolio website and deploy it on a local Kubernetes cluster (Minikube). It highlights containerization, orchestration, and service exposure using NodePort.
 
-Currently, two official plugins are available:
+📌 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Problem: Hosting personal projects reliably with real-world deployment practices.
 
-## Expanding the ESLint configuration
+Approach: Dockerized the portfolio app and deployed it on Minikube with a Kubernetes Service.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Outcome: Achieved smooth local deployment with browser access through Kubernetes NodePort service.
+
+🛠️ Tech Stack
+
+Docker – Containerization
+
+Kubernetes – Orchestration
+
+Minikube – Local Kubernetes cluster
+
+NodePort Service – Service exposure
+
+⚙️ Setup & Installation
+1️⃣ Clone the Repository
+git clone https://github.com/Sakthi1205/portfolio-k8s.git
+cd portfolio-k8s
+
+2️⃣ Build Docker Image
+docker build -t sakthi-portfolio:1.0 .
+
+3️⃣ Start Minikube
+minikube start
+
+4️⃣ Deploy to Kubernetes
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+
+5️⃣ Access the Portfolio
+minikube service portfolio-service
+
+
+This will open your portfolio in the browser.
+Or, you can manually access via:
+
+http://<minikube-ip>:30080
+
+
+
+🌟 Features
+
+Dockerized portfolio application
+
+Kubernetes Deployment & Service (NodePort)
+
+Verified browser access using Minikube tunnel
+
+Easily portable and cloud-ready
+
+📂 Repository Structure
+.
+├── Dockerfile
+├── deployment.yaml
+├── service.yaml
+├── README.md
+└── portfolio-source/   # Your portfolio code
+
+🔮 Future Enhancements
+
+Configure Ingress with a custom domain (portfolio.local).
+
+Deploy on AWS EKS / GKE / AKS for cloud availability.
+
+Add CI/CD pipeline using GitHub Actions or Jenkins.
+
